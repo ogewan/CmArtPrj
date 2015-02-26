@@ -1,0 +1,219 @@
+<html>
+	<!--<head><script type="text/javascript" src="cgfp.js"></script>-->
+	<style>
+
+@font-face {font-family:"The One True Font (System 8x12) Regular";src:url("the_one_true_font_system_8x12.eot?") format("eot"),url("the_one_true_font_system_8x12.woff") format("woff"),url("the_one_true_font_system_8x12.ttf") format("truetype"),url("the_one_true_font_system_8x12.svg#The-One-True-Font-(System-8x12)") format("svg");font-weight:normal;font-style:normal;}
+
+* {
+	/*no select*/
+	position: fixed;-webkit-touch-callout: none;
+	-webkit-user-select: none; /* Webkit */
+	-moz-user-select: none;    /* Firefox */
+	-ms-user-select: none;     /* IE 10  */
+	/* Currently not supported in Opera but will be soon */
+	-o-user-select: none;
+	user-select: none;  
+}
+body {
+    background-color: #000000;
+}
+
+div {
+    color: #00cc00;
+	font-family: "The One True Font (System 8x12) Regular", monospace;
+	font-size: 32px;
+	
+border: 1px;
+border-style: solid;
+border-color: #00cc00;
+}
+
+#console {
+height: 480px;
+width: 640px;
+margin: 0 auto;
+}
+div.line {
+height: 32px;
+width: 640px;
+padding: 0px;
+border: 1px;
+border-style: solid;
+border-color: #ff00ff;
+}
+	</style>
+	</head>
+	<body>
+		<div id="console">
+		<div id="1" class="line">hello world</div>
+		</div>
+		<script>
+		/*
+		move = 0;
+		id = 0;
+		pos = [0,0,0,0];
+		w = window.innerWidth;
+		h = window.innerHeight;
+		var rand = function(){
+			w = window.innerWidth;
+			h = window.innerHeight;
+			if(move>=3){
+				document.getElementById(0).innerHTML = wrds[Math.floor((Math.random() * 5012) + 1)];
+				move =1;
+			}
+			for (o = 0; o <= id; o++) {
+				res = document.getElementById(o).className.split(" ");
+				py = res[1];
+				px = res[0];
+				
+				document.getElementById(o).style.left = (w/2+(px*1*1)).toString()+"px";
+				document.getElementById(o).style.top = (h/2+(py*1*20)).toString()+"px";
+			}
+			return 0;
+		}
+		
+		var recur = function() {
+			rand();
+			window.requestAnimationFrame(recur);
+		};
+		var Key = {
+		  _pressed: {},
+
+		  LEFT: 37,
+		  UP: 38,
+		  RIGHT: 39,
+		  DOWN: 40,
+		  
+		isDown: function(keyCode) {
+			return this._pressed[keyCode];
+		},
+		
+		onKeydown: function(event) {
+			if(!(event.keyCode == 37||event.keyCode == 38||event.keyCode == 39||event.keyCode == 40)){ return 0;}
+			this._pressed[event.keyCode] = true;
+			//move = 1;
+			if(move==0){
+				document.getElementById(0).innerHTML = wrds[Math.floor((Math.random() * 5012) + 1)];
+				move = 3;
+			}
+			move++;
+		},
+		  
+		onKeyup: function(event) {
+			if(!(event.keyCode == 37||event.keyCode == 38||event.keyCode == 39||event.keyCode == 40)){ return 0;}
+			//delete this._pressed[event.keyCode];
+			this._pressed = {};
+			move = 0;
+			//new element  
+			id++;
+			if(id<50){
+			var newdiv = document.createElement('div');
+			newdiv.style.color = "#00cc00";
+			newdiv.addEventListener('mouseover', function(event) {mou.onMovr(event); }, false);
+			newdiv.addEventListener('mouseout', function(event) { mou.onMout(event); }, false);
+			newdiv.addEventListener('mouseup', function(event) { mou.onMout(event); }, false);
+			newdiv.addEventListener('mousedown', function(event) { mou.onMdwn(event); }, false);
+			newdiv.setAttribute('id',id);
+			newdiv.style.left = (id*15).toString()+"px";
+			//newdiv.style.border = "solid #000000";
+			newdiv.innerHTML = document.getElementById(0).innerHTML;
+			document.getElementById(0).innerHTML = first;
+			//console.log(newdiv.innerHTML.length)
+			switch(event.keyCode){
+				case Key.LEFT:
+					pos[0]-=(newdiv.innerHTML.length*10);
+					newdiv.className += pos[0];
+					newdiv.className += " ";
+					newdiv.className += 0;//padding
+					break;
+				case Key.UP:
+					pos[1]--;
+					newdiv.className += 0;//padding
+					newdiv.className += " ";
+					newdiv.className += pos[1];
+					break;
+				case Key.RIGHT:
+					pos[2]+=(newdiv.innerHTML.length*10);
+					newdiv.className += pos[2];
+					newdiv.className += " ";
+					newdiv.className += 0;//padding
+					break;
+				case Key.DOWN:
+					pos[3]++;
+					newdiv.className += 0;//padding
+					newdiv.className += " ";
+					newdiv.className += pos[3];
+					break;
+			}
+			document.body.appendChild(newdiv); 
+			} else {
+			for(p = id;p <5012;p++){
+			var newdiv = document.createElement('div');
+			newdiv.style.color = "#00cc00";
+			newdiv.addEventListener('mouseover', function(event) {mou.onMovr(event); }, false);
+			newdiv.addEventListener('mouseout', function(event) { mou.onMout(event); }, false);
+			newdiv.addEventListener('mouseup', function(event) { mou.onMout(event); }, false);
+			newdiv.addEventListener('mousedown', function(event) { mou.onMdwn(event); }, false);
+			newdiv.setAttribute('id',p);
+			newdiv.style.left =Math.floor((Math.random() * w) + 1).toString()+"px";
+			newdiv.style.top =Math.floor((Math.random() * h) + 1).toString()+"px";
+			//newdiv.style.border = "solid #000000";
+			document.getElementById(0).innerHTML = wrds[Math.floor((Math.random() * 5012) + 1)];
+			newdiv.innerHTML = document.getElementById(0).innerHTML;
+			document.getElementById(0).innerHTML = first;
+			document.body.appendChild(newdiv); 
+			}
+			}
+		}
+		};
+		var mou = {
+		onMdwn: function(event) {
+			modulus = parseInt(event.target.id);
+			for (q = 0; q <= id; q++) {
+				if(!(q%(id-modulus))){
+					document.getElementById(q).style.color = "#0076FF";
+				} else {
+					//document.getElementById(q).style.color = "#00cc00";
+				}
+			}
+		},
+		onMovr: function(event) {
+			//event.relatedTarget.style.color = "#ff8800";
+			modulus = parseInt(event.target.id);
+			for (q = 0; q <= id; q++) {
+				if(!(q%modulus)){
+					//console.log(modulus)
+					//console.log(q%modulus)
+					document.getElementById(q).style.color = "#ff8800";
+				}
+			}
+		},
+		onMout: function(event) {
+			//event.relatedTarget.style.color = "#00cc00";
+			modulus = parseInt(event.target.id);
+			for (q = 0; q <= id; q++) {
+				if(!(q%modulus)){
+					//console.log(event.target.id)
+					//console.log(q%modulus)
+					if(document.getElementById(q).style.color == "#0076FF"){
+					} else {
+						document.getElementById(q).style.color = "#00cc00";
+					}
+				}
+			}
+		}
+		};
+		window.addEventListener('keyup', function(event) { Key.onKeyup(event); }, false);
+		window.addEventListener('keydown', function(event) { Key.onKeydown(event); }, false);
+		first = wrds[Math.floor((Math.random() * 100) + 1)];
+		document.getElementById(0).innerHTML = first;
+		//document.getElementById(id).style.border = "solid #000000";
+		document.getElementById(id).className += "0"; 
+		document.getElementById(id).className += " ";
+		document.getElementById(id).className += "0";
+		document.getElementById(id).style.color = "#00cc00";
+		window.requestAnimationFrame(recur);
+		*/
+		</script>
+	</body>
+</html>
