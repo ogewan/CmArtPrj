@@ -1,5 +1,5 @@
 <!DOCTYPE><html>
-	<!--<head><script type="text/javascript" src="cgfp.js"></script>-->
+	<head>
 	<style>
 
 @font-face {font-family:"The One True Font (System 8x12) Regular";src:url("the_one_true_font_system_8x12.eot?") format("eot"),url("the_one_true_font_system_8x12.woff") format("woff"),url("the_one_true_font_system_8x12.ttf") format("truetype"),url("the_one_true_font_system_8x12.svg#The-One-True-Font-(System-8x12)") format("svg");font-weight:normal;font-style:normal;}
@@ -144,6 +144,9 @@ border-color: #ff00ff*/;
 		},
 		
 		onKeydown: function(event) {
+			if(event.keyCode == 8){
+				event.preventDefault();
+			}
 			if(disable[3]){
 				return '';
 			}
