@@ -1,34 +1,148 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>Cmartprj by seun40</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Cmartprj</h1>
-        <h2></h2>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <ul>
-<li><a href="p1">Project 1</a></li>
-<li><a href="p2">Project 2</a></li>
-</ul>
-      </section>
-    </div>
-
-    
-  </body>
+<head><style>
+table {
+	width: 790px;
+	height: 540px;
+	margin:0px auto;
+	margin-top:12px;
+}
+td:hover.game {
+	border-color: #ffffff;
+}
+td:hover.active {
+	border-color: #ffffff;
+}
+td a {
+display:block;
+width:100%;
+height:100%;
+}
+th, td {
+    border: 1px solid;/* #00cc00;*/
+    /*border-collapse: collapse;*/
+    padding: 5px;
+    text-align: left;  
+	background-size: 100% 100%;	
+}
+body {
+    margin: 0;
+	 background-color: #000000;
+	 color: #00cc00;
+}
+img {
+   width: 1%;
+    height: auto;
+}
+td.bdy {
+  text-align:center;
+  vertical-align:middle;
+}
+</style>
+<head>
+<body>
+<table id="tab">
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td background='p2.jpg' class='game'><a href="p2.html"></a></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td background='p1.jpg' class='game'><a href="p1.html"></a></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td id="bdy" colspan="2" rowspan="2" ></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+</table> 
+<hr id="hre" COLOR="#00cc00" WIDTH="60%" align="center" size="1">
+<p id="foot" style="text-align: center">Electronic Literature Collection 2 ` </p> 
+<script>
+switch(parseInt(sessionStorage.prj)) {
+    case 1:
+		document.body.style.color = "#ff8800";
+		document.getElementById('hre').color = '#ff8800';
+		document.getElementById('tab').style.backgroundColor = '#00cc00';
+        break;
+    case 2:
+		document.body.style.color = "#0076FF";
+		document.getElementById('hre').color = '#0076FF';
+		document.getElementById('tab').style.backgroundColor = '#ff8800';
+        break;
+	case 3:
+		document.body.style.color = "#7600FF";
+		document.getElementById('hre').color = '#7600FF';
+		document.getElementById('tab').style.backgroundColor = '#0076FF';
+        break;
+	default:
+		sessionStorage.prj = 1;
+}
+document.getElementById("foot").innerHTML += "j«8~Š4YaäÏc…‚]LkËÎX°®àøªf-æWÏ=ã± „Jü@eÌÛt" ;
+</script>
+</body>
 </html>

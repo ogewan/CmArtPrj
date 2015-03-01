@@ -23,7 +23,7 @@ div {
     color: #00cc00;
 	font-family: "The One True Font (System 8x12) Regular", monospace;
 	font-size: 32px;
-
+/*
 border: 1px;
 border-style: solid;
 border-color: #00cc00/**/;
@@ -82,6 +82,7 @@ border-color: #ff00ff*/;
 			if(disable[3]){
 				return '';
 			}
+			//todo
 		};
 		var recur = function() {
 			rand();
@@ -184,7 +185,7 @@ border-color: #ff00ff*/;
 		onKeyup: function(event) {
 		}
 		};
-		document.getElementById(cur).innerHTML = "user: Monkey"+Math.random().toString().replace('0.','');;
+		document.getElementById(cur).innerHTML = "user: Monkey"+Math.random().toString().replace('0.','');
 		lock = 1;
 		cur++;
 				var newline = document.createElement('div');
