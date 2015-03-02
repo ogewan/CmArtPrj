@@ -123,7 +123,20 @@ td.bdy {
 <hr id="hre" COLOR="#00cc00" WIDTH="60%" align="center" size="1">
 <p id="foot" style="text-align: center">Electronic Literature Collection 2 ` </p> 
 <script>
-switch(parseInt(sessionStorage.prj)) {
+loaded = 0;
+if(parseInt(sessionStorage.p1)){
+	loaded++;
+}
+if(parseInt(sessionStorage.p2)){
+	loaded++;
+}
+if(parseInt(sessionStorage.p3)){
+	loaded++;
+}
+if(parseInt(sessionStorage.p4)){
+	loaded++;
+}
+switch(loaded){
     case 1:
 		document.body.style.color = "#ff8800";
 		document.getElementById('hre').color = '#ff8800';
@@ -139,8 +152,14 @@ switch(parseInt(sessionStorage.prj)) {
 		document.getElementById('hre').color = '#7600FF';
 		document.getElementById('tab').style.backgroundColor = '#0076FF';
         break;
+	case 4:
+		document.body.style.backgroundColor = "#FFFFFF";
+        break;
 	default:
-		sessionStorage.prj = 1;
+		sessionStorage.p1 = 0;
+		sessionStorage.p2 = 0;
+		sessionStorage.p3 = 0;
+		sessionStorage.p4 = 0;
 }
 document.getElementById("foot").innerHTML += "j«8~Š4YaäÏc…‚]LkËÎX°®àøªf-æWÏ=ã± „Jü@eÌÛt" ;
 </script>
