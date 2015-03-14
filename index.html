@@ -126,9 +126,6 @@ td.bdy {
 loaded = 0;
 if(parseInt(sessionStorage.dead)){
 loaded++;
-document.body.style.backgroundColor = "#000000";
-document.body.style.color = "#ff0000";
-document.body.innerHTML = 'connecting...<br> connection succesful...<br> hello new world';
 }
 if(parseInt(sessionStorage.p1)){
 	loaded++;
@@ -184,11 +181,16 @@ document.body.innerHTML = 'connecting...<br> connection succesful...<br> hello n
 		document.getElementById("p4").className = "";
 		sessionStorage.dead = 1;
         break;
+	case 5:
+		document.body.style.backgroundColor = "#000000";
+		document.body.style.color = "#ff0000";
+		document.body.innerHTML = 'connecting...<br> connection succesful...<br> hello new world';
 	default:
 		sessionStorage.p1 = 0;
 		sessionStorage.p2 = 0;
 		sessionStorage.p3 = 0;
 		sessionStorage.p4 = 0;
+		sessionStorage.dead = 0;
 }
 
 document.getElementById("foot").innerHTML += "j«8~Š4YaäÏc…‚]LkËÎX°®àøªf-æWÏ=ã± „Jü@eÌÛt" ;
