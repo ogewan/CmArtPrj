@@ -46,7 +46,7 @@ td.bdy {
 	<td></td>
 	<td></td>
 	<td></td>
-	<td background='p2.jpg' class='game'><a href="p2.html"></a></td>
+	<td id='p2' background='p2.jpg' class='game'><a href="p2.html"></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -54,17 +54,7 @@ td.bdy {
   </tr>
   <tr>
 	<td></td>
-	<td background='p1.jpg' class='game'><a href="p1.html"></a></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-  <tr>
-	<td></td>
-	<td></td>
+	<td  id='p1' background='p1.jpg' class='game'><a href="p1.html"></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -73,9 +63,19 @@ td.bdy {
 	<td></td>
   </tr>
   <tr>
+	<td id='p4' background='p4.jpg' class='game'><a href="p4.html"></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td></td>
+	<td></td>
+	<td  id='p3' background='p3.jpg' class='game'><a href="p3.html"></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -124,6 +124,12 @@ td.bdy {
 <p id="foot" style="text-align: center">Electronic Literature Collection 2 ` </p> 
 <script>
 loaded = 0;
+if(parseInt(sessionStorage.dead)){
+loaded++;
+document.body.style.backgroundColor = "#000000";
+document.body.style.color = "#ff0000";
+document.body.innerHTML = 'connecting...<br> connection succesful...<br> hello new world';
+}
 if(parseInt(sessionStorage.p1)){
 	loaded++;
 }
@@ -153,7 +159,30 @@ switch(loaded){
 		document.getElementById('tab').style.backgroundColor = '#0076FF';
         break;
 	case 4:
-		document.body.style.backgroundColor = "#FFFFFF";
+		document.body.style.backgroundColor = "#FF0000";
+		document.body.style.color = "#000000";
+		document.getElementById('hre').color = '#000000';
+		//document.getElementById('tab').style.backgroundColor = '#000000';
+		document.getElementById("bdy").addEventListener("click", function(){
+document.body.style.backgroundColor = "#000000";
+document.body.style.color = "#ff0000";
+document.body.innerHTML = 'connecting...<br> connection succesful...<br> hello new world';
+});
+		document.getElementById('bdy').style.backgroundImage = "url('end.png')";
+		document.getElementById("bdy").className = "game";
+		document.getElementById('p1').innerHTML = '';
+		document.getElementById('p1').style.backgroundImage = "url('')";
+		document.getElementById("p1").className = "";
+		document.getElementById('p2').innerHTML = '';
+		document.getElementById('p2').style.backgroundImage = "url('')";
+		document.getElementById("p2").className = "";
+		document.getElementById('p3').innerHTML = '';
+		document.getElementById('p3').style.backgroundImage = "url('')";
+		document.getElementById("p3").className = "";
+		document.getElementById('p4').innerHTML = '';
+		document.getElementById('p4').style.backgroundImage = "url('')";
+		document.getElementById("p4").className = "";
+		sessionStorage.dead = 1;
         break;
 	default:
 		sessionStorage.p1 = 0;
@@ -161,6 +190,7 @@ switch(loaded){
 		sessionStorage.p3 = 0;
 		sessionStorage.p4 = 0;
 }
+
 document.getElementById("foot").innerHTML += "j«8~Š4YaäÏc…‚]LkËÎX°®àøªf-æWÏ=ã± „Jü@eÌÛt" ;
 </script>
 </body>
