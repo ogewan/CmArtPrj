@@ -72,6 +72,9 @@ div.alt{
 		},
 		
 		onKeydown: function(event) {
+			if(event.keyCode == 8){
+				event.preventDefault();
+			}
 			if(!(event.keyCode == 37||event.keyCode == 38||event.keyCode == 39||event.keyCode == 40)){ return 0;}
 			this._pressed[event.keyCode] = true;
 			//move = 1;

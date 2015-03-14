@@ -112,6 +112,14 @@ div.alt{
 		}
 		};
 		
+		var Key = {
+		onKeydown: function(event) {
+			if(event.keyCode == 8){
+				event.preventDefault();
+			}
+		}
+		};
+		
 		first = wrds[Math.floor((Math.random() * 100) + 1)];
 		document.getElementById('fake').innerHTML = first;
 		document.getElementById('fake').style.color = "#00cc00";
@@ -120,6 +128,7 @@ div.alt{
 		var ssa = document.getElementById('fake');
 		ssa.parentNode.removeChild(ssa);
 		
+		window.addEventListener('keydown', function(event) { Key.onKeydown(event); }, false);
 		window.requestAnimationFrame(recur);
 		</script>
 	</body>
